@@ -21,14 +21,15 @@
     <![endif]-->
   </head>
   <body>
-    <div class = "container">
+    <div class = "container-fluid">
 
         <div class = "row">
            <div class = "col-xs-12">
                 <img src = "img/fluxlogoblue.png" width = '100%'>
            </div>
         </div>
-
+    </div>
+    <div class = "container">
           <div class = "row">
             <div class = "col-xs-12">
                 <video width="100%" height= "56%" controls
@@ -47,16 +48,16 @@
           </div>
 
           <div class = "row">
-              <div class = "col-sm-4 col-md-4 col-xs-12">
-                  <button onclick="android()"><img src = "img/android.png" width='25px' height='25px'> Streaming for Android users </button>
+              <div class = "col-md-4 col-xs-12">
+                  <button class="btn btn-default btn-lg" onclick="android()"><img src = "img/android.png" width='25px' height='25px'> Streaming for Android users </button>
               </div>
 
-              <div class = "col-sm-4 col-md-4 col-xs-12">
-                  <button onclick = "appDirect()"><img src="img/exit2app.png" width = '25px' height='25px'> App download for iOS users</button>
+              <div class = "col-md-4 col-xs-12">
+                  <button class="btn btn-default btn-lg" onclick = "appDirect()"><img src="img/exit2app.png" width = '25px' height='25px'> App download for iOS users</button>
               </div>
 
-              <div class = "col-sm-4 col-md-4 col-xs-12">
-                  <button><a href = "media/powwow.mp3" download><img src="img/downloadicon.png" width= '25px' height= '25px'> Direct MP3 download</button>
+              <div class = "col-md-4 col-xs-12">
+                  <button class="btn btn-default btn-lg"><a href = "media/powwow.mp3" download><img src="img/downloadicon.png" width= '25px' height= '25px'> Direct MP3 download</button>
               </div>
 
 
@@ -68,7 +69,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
-    <script src="flux.js"></script>
+    <script src="js/flux.js"></script>
 
     </script>
   </body>

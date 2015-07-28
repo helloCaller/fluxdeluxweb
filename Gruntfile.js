@@ -305,6 +305,11 @@ module.exports = function (grunt) {
         expand: true,
         src: '*.css',
         dest: 'dist/'
+      },
+      js: {
+        expand: true,
+        src: 'js/*.js',
+        dest: 'dist/'
       }
     },
 
@@ -510,7 +515,7 @@ module.exports = function (grunt) {
   grunt.registerTask('dist-css', ['less-compile', 'autoprefixer:core', 'autoprefixer:theme', 'csscomb:dist', 'cssmin:minifyCore', 'cssmin:minifyTheme']);
 
   // Full distribution task.
-  grunt.registerTask('dist', ['clean:dist', 'dist-css', 'copy:fonts', 'dist-js', 'copy:html', 'copy:img', 'copy:media', 'copy:css']);
+  grunt.registerTask('dist', ['clean:dist', 'dist-css', 'copy:fonts', 'dist-js', 'copy:html', 'copy:img', 'copy:media', 'copy:css', 'copy:js']);
 
   // Default task.
   grunt.registerTask('default', ['clean:dist', 'copy:fonts', 'test']);
