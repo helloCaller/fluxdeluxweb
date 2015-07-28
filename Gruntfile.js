@@ -257,7 +257,7 @@ module.exports = function (grunt) {
       dist: {
         expand: true,
         cwd: 'dist/css/',
-        src: ['*.css', '!*.min.css'],
+        src: ['css/*.css', '!*.min.css'],
         dest: 'dist/css/'
       },
       examples: {
@@ -285,16 +285,38 @@ module.exports = function (grunt) {
           '**/*'
         ],
         dest: 'docs/dist/'
+      },
+      html: {
+        expand: true,
+        src: '*.html',
+        dest: 'dist/'
+      },
+      img: {
+        expand: true,
+        src: 'img/*.*',
+        dest: 'dist/'
+      },
+      media: {
+        expand: true,
+        src: 'media/*.*',
+        dest: 'dist/'
+      },
+      css: {
+        expand: true,
+        src: '*.css',
+        dest: 'dist/'
       }
     },
 
     connect: {
       server: {
         options: {
-          port: 3000,
-          base: '.'
+          port: 9000,
+          // Change this to '0.0.0.0' to access the server from outside.
+          hostname: 'localhost',
+          livereload: 35729
         }
-      }
+      },
     },
 
     jekyll: {
@@ -408,6 +430,14 @@ module.exports = function (grunt) {
       }
     },
 
+    serve: {
+      options: {
+        serve: {
+          path: 'dist/'
+        }
+      }
+    },
+
     compress: {
       main: {
         options: {
@@ -480,7 +510,7 @@ module.exports = function (grunt) {
   grunt.registerTask('dist-css', ['less-compile', 'autoprefixer:core', 'autoprefixer:theme', 'csscomb:dist', 'cssmin:minifyCore', 'cssmin:minifyTheme']);
 
   // Full distribution task.
-  grunt.registerTask('dist', ['clean:dist', 'dist-css', 'copy:fonts', 'dist-js']);
+  grunt.registerTask('dist', ['clean:dist', 'dist-css', 'copy:fonts', 'dist-js', 'copy:html', 'copy:img', 'copy:media', 'copy:css']);
 
   // Default task.
   grunt.registerTask('default', ['clean:dist', 'copy:fonts', 'test']);
