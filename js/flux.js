@@ -1,10 +1,16 @@
+
+
+var tf = false;
+var audio = new Audio("media/powwow.mp3");
+
+
 var android = function(){
   var location = confirm('If at a FluxDelux location press OK');
-  if(location === true){
-    var audio = new Audio("powwow.mp3")
+  if(location === true && tf === false){
     audio.play();
+    tf = true;
 
-  } else {
+  } else{
     console.log('Bye');
   }
 //---adding controls to the streaming?

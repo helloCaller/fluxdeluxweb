@@ -1,17 +1,20 @@
 body{
-
+  background: -webkit-linear-gradient(left, #1b4790, #072b69);
+   background: -o-linear-gradient(right, #1b4790, #072b69);
+   background: -moz-linear-gradient(right, #1b4790, #072b69);
+   background: linear-gradient(right, #1b4790, #072b69);
 
 }
 
 #info {
   text-align: center;
-
-  font-size: 3vw;
+  color: white;
+  
 
 }
 
 button {
-
   margin-top: 25px;
+
 
 }
