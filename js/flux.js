@@ -11,10 +11,10 @@ var day = date.getDate();
 
 //---creating audio element to play for Android Stream
 var audio = document.createElement('audio');
-audio.src = 'media/powwow.mp3';
+audio.src = 'media/flux-web-v2.mp3';
 
 //---to eventually be set as 8, so that conditions only allow stream to happen on August 8th.
-var currentDay = 7;
+var fluxDay = 8;
 
 
 
@@ -22,14 +22,14 @@ var currentDay = 7;
 var android = function(){
 
   var location = confirm("FluxDelux gets going at Nathan Philips Square, on August 8th, 2015! If you're already there, get your head phones plugged in and ready to go, then hit OK");
-    if(location === true && day === currentDay && tf === false){
+    if(location === true && day === fluxDay && tf === false){
         audio.play();
         canvas.style.visibility = "visible";
         loading.style.visibility= "visible";
 
-        tf===true
+        tf=true
 
-    } else if(location === true && day !== currentDay){// in case it's not the right date, changing the stream button's text
+    } else if(location === true && day !== fluxDay){// in case it's not the right date, changing the stream button's text
         document.getElementById("b1").innerHTML = '<img src = "img/android.png" width=\'25px\' height=\'25px\'>' + " " + "Come back on August 8th!";
   };
   // audio.onended=function(){ // once the music is over, returning everything to a ready state, but changing the text to aknowledge the end of Flux
