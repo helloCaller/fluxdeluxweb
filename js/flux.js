@@ -17,6 +17,24 @@ audio.src = 'media/flux-web-v2.mp3';
 var fluxDay = 8;
 
 
+//---SSE
+if (!!window.EventSource){
+var source = new EventSource("http://cohort-server-dev.herokuapp.com/broadcast");
+console.log("hello");
+
+} else {
+  console.log("nope");
+}
+ source.addEventListener('Episode 1 Go', function(e){
+   if (e.origin != 'http://cohort-server-dev.herokuapp.com/broadcast') {
+    alert('Origin was not http://example.com');
+    console.log("hello episode 1");
+    return;
+  }
+   console.log(e.data);
+ }, false);
+
+
 
 // ---stream function. Only happens when user meets the conditions of Clicking Ok, having it be the right date, and the button not having been pressed before (playerLayer mostly takes care of this by not allowing the user to click the button again, and re-trigger the audio, but on a keyboard the user can still potentially trigger by pressing space)
 var android = function(){
